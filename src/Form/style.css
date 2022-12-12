@@ -1,0 +1,72 @@
+.form {
+    padding: 10px;
+    margin: 5px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.form__fieldset {
+    background-color:hsl(56, 38%, 61%);
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 10px -10px 19px -7px;
+}
+
+.form__legend {
+    padding:5px 10px;
+    background-color: coral;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.form__label {
+    font-weight: 400;
+}
+
+.form__labelText{
+    width: 160px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.form__input {
+    padding: 5px 10px;
+    max-width: 100px;
+    border-radius: 5px;
+    background-color: bisque;
+    border: 1px solid grey;
+}
+
+.form__currency {
+    padding: 5px 0;
+    max-width: 100px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: bisque;
+    border: 1px solid grey;
+}
+
+.form__button {
+    padding: 5px 10px;
+    background-color: hsl(70, 199%, 89%);
+    border-radius: 5px;
+    border-top: 5px;
+    border-left: 5px;
+    font-weight: bold;
+}
+
+.form__button:hover {
+    background-color: hsl(17, 100%, 81%);
+}
+
+.form__button:active {
+    background-color: hsl(17, 55%, 38%);
+}
+
+.form__currentRates {
+    padding: 5px 0px;
+    font-size: 15px;
+    text-align:right;
+    color:rgb(255, 255, 255);
+}
