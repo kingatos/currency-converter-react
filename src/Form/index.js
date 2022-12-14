@@ -15,7 +15,7 @@ const Form = () => {
         setResult({
             currencyFrom,
             currencyTo,
-            targetAmount: (findCurrencyFrom().rate * amount) / findCurrencyTo().rate, 
+            targetAmount: (findCurrencyFrom().rate * amount) / findCurrencyTo().rate,
             sourceAmount: +amount,
         });
     };
@@ -78,7 +78,9 @@ const Form = () => {
                 </p>
                 <p>
                     <button className="form__button">Calculate</button>
-                    <button className="form__button" type="reset">Clear</button>
+                    <button className="form__button" type="reset">
+                        Clear
+                    </button>
                 </p>
                 <Result result={result}/>
             </fieldset>
