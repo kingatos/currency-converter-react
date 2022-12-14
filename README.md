@@ -1,4 +1,4 @@
-# Currency Converter with Create React App
+#  💰 Currency Converter with Create React App
 
 #  ➡ [DEMO](https://kingatos.github.io/currency-converter-react/)
 
@@ -39,17 +39,17 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### `technologies used in the project`
 
-- HTML
-- CSS
-- javaScript ES6+
-- BEM Convention
-- media queries
-- Open Graph
-- FLEX/GRID
-- normalise.css
-- react.js
-- node.js
-- create react app
-- webpack
-- babel
+`HTML`
+`CSS`
+`javaScript ES6+`
+`BEM Convention`
+`media queries`
+`Open Graph`
+`FLEX/GRID`
+`normalise.css`
+`react.js`
+`node.js`
+`create react app`
+`webpack`
+`babel`
 
