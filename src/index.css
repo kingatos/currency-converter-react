@@ -15,7 +15,7 @@ body {
   text-align: center;
   color:hsl(180, 22%, 13%); 
   font-size: 15px;
-  background-image: url("../public/images/background.jpg");
+  background-image: url("../public/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2500px;
