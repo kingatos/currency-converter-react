@@ -2,6 +2,7 @@ import "./style.css";
 import { currenciesFrom, currenciesTo } from "../Currencies";
 import { useState } from "react";
 import { Result } from "./Result";
+import { Buttons } from "./Buttons";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -42,7 +43,9 @@ const Form = () => {
                         min="0.01"
                         step="0.01"
                         value={amount}
-                        onChange={({ target }) => setAmount(target.value)} />
+                        onChange={({ target }) => setAmount(target.value)}
+                        autoFocus
+                    />
                 </label>
                 <p>
                     <label className="form__label">
@@ -76,13 +79,8 @@ const Form = () => {
                         </select>
                     </label>
                 </p>
-                <p>
-                    <button className="form__button">Calculate</button>
-                    <button className="form__button" type="reset">
-                        Clear
-                    </button>
-                </p>
-                <Result result={result}/>
+                <Buttons setResult={setResult} setAmount={setAmount} />              
+                <Result result={result} />
             </fieldset>
             <p className="form__currentRates">
                 *exchange rate are from October 28, 2022
