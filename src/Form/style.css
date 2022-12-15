@@ -47,26 +47,30 @@
     border: 1px solid grey;
 }
 
-.form__button {
-    padding: 5px 10px;
-    background-color: hsl(70, 199%, 89%);
-    border-radius: 5px;
-    border-top: 5px;
-    border-left: 5px;
-    font-weight: bold;
-}
-
-.form__button:hover {
-    background-color: hsl(17, 100%, 81%);
-}
-
-.form__button:active {
-    background-color: hsl(17, 55%, 38%);
-}
-
 .form__currentRates {
     padding: 5px 0px;
     font-size: 15px;
     text-align:right;
     color:rgb(255, 255, 255);
+}
+
+.form__button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: hsl(70, 199%, 89%);
+    border-radius: 5px;
+    border-top: 5px;
+    border-left: 5px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.form__button:hover {
+    background-color: hsl(17, 100%, 81%);
+    transform: scale(1.1);
+}
+
+.form__button:active {
+    background-color: hsl(17, 55%, 38%);
+    transform: scale(1.1);
 }
