@@ -2,6 +2,8 @@
 
 #  ➡ [DEMO](https://kingatos.github.io/currency-converter-react/)
 
+# ![How it use?](https://i.ibb.co/f2q41mq/currencyconverter.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Here is a simple currency converter. Enter the amount and get the result! Check it out!
 
