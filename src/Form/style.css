@@ -20,7 +20,7 @@
 }
 
 .form__label {
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .form__labelText{
@@ -36,6 +36,7 @@
     border-radius: 5px;
     background-color: bisque;
     border: 1px solid grey;
+    font-weight: bold;
 }
 
 .form__currency {
@@ -45,6 +46,7 @@
     width: 100%;
     background-color: bisque;
     border: 1px solid grey;
+    font-weight: bold;
 }
 
 .form__currentRates {
