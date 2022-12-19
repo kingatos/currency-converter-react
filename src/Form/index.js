@@ -1,17 +1,17 @@
 import "./style.css";
-import { currenciesFrom, currenciesTo } from "../currencies";
+import { currencies } from "../currencies";
 import { useState } from "react";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
-    const [currencyFrom, setCurrencyFrom] = useState(currenciesFrom[0].name);
-    const [currencyTo, setCurrencyTo] = useState(currenciesTo[0].name);
+    const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
+    const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
     const [result, setResult] = useState("");
 
-    const findCurrencyFrom = () => currenciesFrom.find(({ name }) => name === currencyFrom);
-    const findCurrencyTo = () => currenciesTo.find(({ name }) => name === currencyTo);
+    const findCurrencyFrom = () => currencies.find(({ name }) => name === currencyFrom);
+    const findCurrencyTo = () => currencies.find(({ name }) => name === currencyTo);
     const calculateResult = () => {
         setResult({
             currencyFrom,
@@ -55,7 +55,7 @@ const Form = () => {
                             name="currencyFrom"
                             value={currencyFrom}
                             onChange={({ target }) => setCurrencyFrom(target.value)}>
-                            {currenciesFrom.map(currencyFrom => (
+                            {currencies.map(currencyFrom => (
                                 <option key={currencyFrom.id} value={currencyFrom.name}>
                                     {currencyFrom.name}
                                 </option>
@@ -71,7 +71,7 @@ const Form = () => {
                             name="currencyTo"
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}>
-                            {currenciesTo.map(currencyTo => (
+                            {currencies.map(currencyTo => (
                                 <option key={currencyTo.id} value={currencyTo.name}>
                                     {currencyTo.name}
                                 </option>
