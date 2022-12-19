@@ -1,5 +1,5 @@
 import "./style.css";
-import { currenciesFrom, currenciesTo } from "../Currencies";
+import { currenciesFrom, currenciesTo } from "../currencies";
 import { useState } from "react";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
