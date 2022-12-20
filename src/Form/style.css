@@ -10,7 +10,8 @@
     border-style: none;
     border-radius: 5px;
     box-shadow: 10px -10px 19px -7px;
-    height: 275px;
+    height: 280px;
+    padding-top: 14px;
 }
 
 .form__legend {
