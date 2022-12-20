@@ -84,7 +84,7 @@ const Form = () => {
                         </select>
                     </label>
                 </p>
-                <Buttons onResetClick={onResetClick} />
+                <Buttons onResetClick={onResetClick} />              
                 <Result result={result} />
             </fieldset>
             <p className="form__currentRates">
