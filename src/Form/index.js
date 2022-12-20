@@ -21,6 +21,12 @@ const Form = () => {
         });
     };
 
+    const onResetClick = () => {
+
+        setResult("");
+        setAmount("");
+    };
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult();
@@ -79,7 +85,7 @@ const Form = () => {
                         </select>
                     </label>
                 </p>
-                <Buttons setResult={setResult} setAmount={setAmount} />              
+                <Buttons onResetClick={onResetClick} />              
                 <Result result={result} />
             </fieldset>
             <p className="form__currentRates">

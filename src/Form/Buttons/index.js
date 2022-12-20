@@ -1,16 +1,13 @@
 import "./style.css";
 
 
-export const Buttons = ({ setResult, setAmount }) => (
+export const Buttons = ({ onResetClick }) => (
     <p>
         <button className="form__button">Calculate</button>
         <button
             className="form__button"
             type="reset"
-            onClick={() => {
-                setResult("");
-                setAmount("");
-            }}
+            onClick={onResetClick}
         >
             Clear
         </button>
