@@ -10,13 +10,12 @@ const Form = () => {
     const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
     const [result, setResult] = useState("");
 
-    const findCurrencyFrom = () => currencies.find(({ name }) => name === currencyFrom);
-    const findCurrencyTo = () => currencies.find(({ name }) => name === currencyTo);
+    const findCurrency = (currencyName) => currencies.find(({ name }) => name === currencyName);
     const calculateResult = () => {
         setResult({
             currencyFrom,
             currencyTo,
-            targetAmount: (findCurrencyFrom().rate * amount) / findCurrencyTo().rate,
+            targetAmount: (findCurrency(currencyFrom).rate * amount) / findCurrency(currencyTo).rate,
             sourceAmount: +amount,
         });
     };
