@@ -6,16 +6,23 @@
 }
 
 .form__fieldset {
-    background-color:hsl(56, 38%, 61%);
+    background-color: hsl(56, 38%, 61%);
     border-style: none;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 10px -10px 19px -7px;
-    height: 280px;
+    height: 350px;
     padding-bottom: 14px;
 }
 
+@media (max-width:375px) {
+    .form__fieldset {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .form__legend {
-    padding:5px 10px;
+    padding: 5px 10px;
     background-color: coral;
     border-radius: 5px;
     font-weight: bold;
@@ -25,7 +32,7 @@
     font-weight: bold;
 }
 
-.form__labelText{
+.form__labelText {
     width: 160px;
     display: inline-block;
     margin-top: 10px;
@@ -49,11 +56,4 @@
     background-color: bisque;
     border: 1px solid grey;
     font-weight: bold;
-}
-
-.form__currentRates {
-    padding: 5px 0px;
-    font-size: 15px;
-    text-align:right;
-    color:rgba(255, 255, 255, 0.63);
 }
