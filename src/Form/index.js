@@ -3,6 +3,9 @@ import { currencies } from "../currencies";
 import { useState } from "react";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
+import { Clock } from "../Clock";
+import { Footer } from "../Footer";
+
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -37,6 +40,7 @@ const Form = () => {
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Currency Calculator</legend>
                 <label className="form__label">
+                    <Clock />
                     <span className="form__labelText">
                         Enter the amount:
                     </span>
@@ -85,10 +89,8 @@ const Form = () => {
                 </p>
                 <Buttons onResetClick={onResetClick} />              
                 <Result result={result} />
+            <Footer />
             </fieldset>
-            <p className="form__currentRates">
-                *exchange rate are from October 28, 2022
-            </p>
         </form>
     )
 };
