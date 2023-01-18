@@ -3,20 +3,23 @@ import "./style.css";
 
 
 export const Clock = () => {
-    const [time, setTime] = useState(new Date());
+    const [date, currentDate] = useState(new Date());
 
     useEffect(() => {
         const intervalID = setInterval(() => {
-            setTime(new Date());
+            currentDate(new Date());
         }, 1000);
         return () =>
             clearInterval(intervalID);
     }, []);
+
+    const formattedDate = date.toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long" });
+    const formattedTime = date.toLocaleTimeString("pl");
+
     return (
         <div>
             <p className="clock">
-                Today is {time.toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long"})},&nbsp;
-                {time.toLocaleTimeString("pl")}
+                Today is {formattedDate},&nbsp;{formattedTime}
             </p>
         </div>
     );
