@@ -3,17 +3,17 @@ import "./style.css";
 
 
 export const Clock = () => {
-    const [date, currentDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
 
     useEffect(() => {
         const intervalID = setInterval(() => {
-            currentDate(new Date());
+            setDate(new Date());
         }, 1000);
         return () =>
             clearInterval(intervalID);
     }, []);
 
-    const formattedDate = date.toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long" });
+    const formattedDate = date.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" });
     const formattedTime = date.toLocaleTimeString("pl");
 
     return (
