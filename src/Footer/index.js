@@ -1,8 +1,8 @@
-import "./style.css";
+import { StyledFooter } from "./styled.js";
 
 export const Footer = () => (
-    <footer className="footer">
+    <StyledFooter>
         &copy; Copyright by Kinga 2022 All rights reserved.
-    </footer>
+    </StyledFooter>
 );
 

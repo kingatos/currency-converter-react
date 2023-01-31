@@ -1,10 +1,10 @@
-import "./style.css";
 import { currencies } from "../currencies";
 import { useState } from "react";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
 import { Clock } from "../Clock";
 import { Footer } from "../Footer";
+import { StyledForm, Fieldset, Legend, Label, LabelText, Input, Currency } from "./styled.js";
 
 
 const Form = () => {
@@ -34,18 +34,19 @@ const Form = () => {
     };
 
     return (
-        <form
-            className="form"
-            onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Currency Calculator</legend>
-                <label className="form__label">
+        <StyledForm
+            onSubmit={onFormSubmit}
+        >
+            <Fieldset>
+                <Legend>
+                    Currency Calculator
+                </Legend>
+                <Label>
                     <Clock />
-                    <span className="form__labelText">
+                    <LabelText>
                         Enter the amount:
-                    </span>
-                    <input
-                        className="form__input"
+                    </LabelText>
+                    <Input
                         type="number"
                         required
                         min="0.01"
@@ -54,12 +55,13 @@ const Form = () => {
                         onChange={({ target }) => setAmount(target.value)}
                         autoFocus
                     />
-                </label>
+                </Label>
                 <p>
-                    <label className="form__label">
-                        <span className="form__labelText">Input currency:</span>
-                        <select
-                            className="form__currency"
+                    <Label>
+                        <LabelText>
+                            Input currency:
+                        </LabelText>
+                        <Currency
                             name="currencyFrom"
                             value={currencyFrom}
                             onChange={({ target }) => setCurrencyFrom(target.value)}>
@@ -68,14 +70,15 @@ const Form = () => {
                                     {currencyFrom.name}
                                 </option>
                             ))};
-                        </select>
-                    </label>
+                        </Currency>
+                    </Label>
                 </p>
                 <p>
-                    <label className="form__label">
-                        <span className="form__labelText">Output currency:</span>
-                        <select
-                            className="form__currency"
+                    <Label>
+                        <LabelText>
+                            Output currency:
+                        </LabelText>
+                        <Currency
                             name="currencyTo"
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}>
@@ -84,14 +87,14 @@ const Form = () => {
                                     {currencyTo.name}
                                 </option>
                             ))};
-                        </select>
-                    </label>
+                        </Currency>
+                    </Label>
                 </p>
-                <Buttons onResetClick={onResetClick} />              
+                <Buttons onResetClick={onResetClick} />
                 <Result result={result} />
-            <Footer />
-            </fieldset>
-        </form>
+                <Footer />
+            </Fieldset>
+        </StyledForm>
     )
 };
 
