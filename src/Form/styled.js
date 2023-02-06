@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const theme = {
+    colors: {
+        primaryColor: "bisque",
+        secondaryColor: "coral",
+    },
+    fonts: {
+        primaryFont: "Montserrat",
+        weightFont: "bold",
+    },
+};
+
 export const StyledForm = styled.form`
     padding: 10px;
     margin: 5px;
@@ -24,13 +35,13 @@ export const Fieldset = styled.fieldset`
 
 export const Legend = styled.legend`
     padding: 5px 10px;
-    background-color: coral;
+    background-color: ${({ theme }) => theme.colors.secondaryColor};
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: ${({ theme }) => theme.fonts.weightFont};
 `;
 
 export const Label = styled.label`
-   font-weight: bold;
+   font-weight: ${({ theme }) => theme.fonts.weightFont};
 `;
 
 export const LabelText = styled.span`
@@ -44,9 +55,9 @@ export const Input = styled.input`
     padding: 5px 10px;
     max-width: 100px;
     border-radius: 5px;
-    background-color: bisque;
+    background-color: ${({ theme }) => theme.colors.primaryColor};
     border: 1px solid grey;
-    font-weight: bold;
+    font-weight: ${({ theme }) => theme.fonts.weightFont};
 `;
 
 export const Currency = styled.select`
@@ -54,8 +65,8 @@ export const Currency = styled.select`
     max-width: 100px;
     border-radius: 5px;
     width: 100%;
-    background-color: bisque;
+    background-color: ${({ theme }) => theme.colors.primaryColor};
     border: 1px solid grey;
-    font-weight: bold;
+    font-weight: ${({ theme }) => theme.fonts.weightFont};
 `;
 
