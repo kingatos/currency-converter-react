@@ -4,8 +4,8 @@ import { Result } from "./Result";
 import { Buttons } from "./Buttons";
 import { Clock } from "../Clock";
 import { Footer } from "../Footer";
-import { StyledForm, Fieldset, Legend, Label, LabelText, Input, Currency, theme } from "./styled.js";
-
+import { StyledForm, Fieldset, Legend, Label, LabelText, Input, Currency } from "./styled.js";
+import { theme } from  "./theme.js";
 
 const Form = () => {
     const [amount, setAmount] = useState("");

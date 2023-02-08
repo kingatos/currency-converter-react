@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export const theme = {
-    colors: {
-        primaryColor: "bisque",
-        secondaryColor: "coral",
-    },
-    fonts: {
-        primaryFont: "Montserrat",
-        weightFont: "bold",
-    },
-};
-
 export const StyledForm = styled.form`
     padding: 10px;
     margin: 5px;
