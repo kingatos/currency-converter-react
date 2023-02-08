@@ -11,10 +11,7 @@ function useCurrencyDate() {
             clearInterval(intervalID);
     }, []);
 
-    const formattedDate = date.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" });
-    const formattedTime = date.toLocaleTimeString("pl");
-
-    return { formattedDate, formattedTime };
+    return date;
 }
 
 export default useCurrencyDate;

@@ -1,15 +1,14 @@
 import useCurrencyDate from "./useCurrencyDate.js";
 import { StyledClock } from "./styled.js";
 
-
 export const Clock = () => {
-const { formattedDate, formattedTime } = useCurrencyDate();
-
+    const date = useCurrencyDate();
+    const formattedDate = date.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" });
+    const formattedTime = date.toLocaleTimeString("pl");
+    
     return (
-        <div>
-            <StyledClock>
-                Today is {formattedDate},&nbsp;{formattedTime}
-            </StyledClock>
-        </div>
-    );
+        <StyledClock>
+            Today is {formattedDate},&nbsp;{formattedTime}
+        </StyledClock>
+    )
 };

@@ -1,11 +1,17 @@
 import Form from "./Form"
-import Container from "./Container";
+import styled from "styled-components";
+
+export const StyledContainer = styled.div`
+    margin: auto;
+    max-width: 500px;
+    padding: 100px 0;
+`;
 
 function App() {
   return (
-    <Container>
+    <StyledContainer>
       <Form />
-    </Container>
+    </StyledContainer>
   );
 }
 export default App;
