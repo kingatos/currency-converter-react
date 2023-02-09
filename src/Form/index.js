@@ -4,8 +4,15 @@ import { Result } from "./Result";
 import { Buttons } from "./Buttons";
 import { Clock } from "../Clock";
 import { Footer } from "../Footer";
-import { StyledForm, Fieldset, Legend, Label, LabelText, Input, Currency } from "./styled.js";
-import { theme } from  "./theme.js";
+import {
+    StyledForm,
+    Fieldset,
+    Legend,
+    Label,
+    LabelText,
+    Input,
+    Currency
+} from "./styled.js";
 
 const Form = () => {
     const [amount, setAmount] = useState("");
@@ -38,16 +45,15 @@ const Form = () => {
             onSubmit={onFormSubmit}
         >
             <Fieldset>
-                <Legend theme={theme}>
+                <Legend>
                     Currency Calculator
                 </Legend>
-                <Label theme={theme}>
+                <Label>
                     <Clock />
-                    <LabelText theme={theme}>
+                    <LabelText>
                         Enter the amount:
                     </LabelText>
                     <Input
-                        theme={theme}
                         type="number"
                         required
                         min="0.01"
@@ -58,12 +64,11 @@ const Form = () => {
                     />
                 </Label>
                 <p>
-                    <Label theme={theme}>
-                        <LabelText theme={theme}>
+                    <Label>
+                        <LabelText>
                             Input currency:
                         </LabelText>
                         <Currency
-                            theme={theme}
                             name="currencyFrom"
                             value={currencyFrom}
                             onChange={({ target }) => setCurrencyFrom(target.value)}>
@@ -76,12 +81,11 @@ const Form = () => {
                     </Label>
                 </p>
                 <p>
-                    <Label theme={theme}>
-                        <LabelText theme={theme}>
+                    <Label>
+                        <LabelText>
                             Output currency:
                         </LabelText>
                         <Currency
-                            theme={theme}
                             name="currencyTo"
                             value={currencyTo}
                             onChange={({ target }) => setCurrencyTo(target.value)}>

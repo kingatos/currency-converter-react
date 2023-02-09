@@ -1,7 +1,7 @@
 import Form from "./Form"
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
+export const Wrapper = styled.div`
     margin: auto;
     max-width: 500px;
     padding: 100px 0;
@@ -9,9 +9,9 @@ export const StyledContainer = styled.div`
 
 function App() {
   return (
-    <StyledContainer>
+    <Wrapper>
       <Form />
-    </StyledContainer>
+    </Wrapper>
   );
 }
 export default App;

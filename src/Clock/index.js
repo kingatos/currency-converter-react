@@ -1,14 +1,21 @@
-import useCurrencyDate from "./useCurrencyDate.js";
-import { StyledClock } from "./styled.js";
+import { useCurrencyDate } from "./useCurrencyDate.js";
+import { Wrapper } from "./styled.js";
+
+const formattedDate = (date) => date.toLocaleDateString(undefined, {
+    weekday: "long",
+    day: "numeric",
+    month: "long"
+});
+
+const formattedTime = (date) => date.toLocaleTimeString("pl");
 
 export const Clock = () => {
     const date = useCurrencyDate();
-    const formattedDate = date.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" });
-    const formattedTime = date.toLocaleTimeString("pl");
-    
+
+
     return (
-        <StyledClock>
-            Today is {formattedDate},&nbsp;{formattedTime}
-        </StyledClock>
+        <Wrapper>
+            Today is {formattedDate(date)},&nbsp;{formattedTime(date)}
+        </Wrapper>
     )
 };
