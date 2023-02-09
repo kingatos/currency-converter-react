@@ -16,7 +16,7 @@ export const Fieldset = styled.fieldset`
     padding-bottom: 14px;
 
 
-@media(max-width:375px) {
+@media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
         height: 100%;
     }
@@ -24,13 +24,13 @@ export const Fieldset = styled.fieldset`
 
 export const Legend = styled.legend`
     padding: 5px 10px;
-    background-color: ${({ theme }) => theme.colors.secondaryColor};
+    background-color: ${({ theme }) => theme.color.coral};
     border-radius: 5px;
-    font-weight: ${({ theme }) => theme.fonts.weightFont};
+    font-weight: bold;
 `;
 
 export const Label = styled.label`
-   font-weight: ${({ theme }) => theme.fonts.weightFont};
+   font-weight: bold;
 `;
 
 export const LabelText = styled.span`
@@ -44,9 +44,9 @@ export const Input = styled.input`
     padding: 5px 10px;
     max-width: 100px;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.colors.primaryColor};
-    border: 1px solid grey;
-    font-weight: ${({ theme }) => theme.fonts.weightFont};
+    background-color: ${({ theme }) => theme.color.bisque};
+    border: 1px solid ${({ theme }) => theme.color.gray};;
+    font-weight: bold;
 `;
 
 export const Currency = styled.select`
@@ -54,8 +54,8 @@ export const Currency = styled.select`
     max-width: 100px;
     border-radius: 5px;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.primaryColor};
-    border: 1px solid grey;
-    font-weight: ${({ theme }) => theme.fonts.weightFont};
+    background-color: ${({ theme }) => theme.color.bisque};
+    border: 1px solid ${({ theme }) => theme.color.gray};
+    font-weight: bold;
 `;
 

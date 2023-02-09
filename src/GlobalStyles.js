@@ -17,7 +17,7 @@ html {
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
   text-align: center;
-  color:hsl(180, 22%, 13%); 
+  color: ${({ theme }) => theme.color.black};
   font-size: 15px;
   min-height: 100vh;
   background-image: url("${backgroundPhoto}");
