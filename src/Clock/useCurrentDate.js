@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useCurrencyDate() {
+export function useCurrentDate() {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {

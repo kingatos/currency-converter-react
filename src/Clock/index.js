@@ -1,4 +1,4 @@
-import { useCurrencyDate } from "./useCurrencyDate.js";
+import { useCurrentDate } from "./useCurrentDate.js";
 import { Wrapper } from "./styled.js";
 
 const formattedDate = (date) => date.toLocaleDateString(undefined, {
@@ -10,7 +10,7 @@ const formattedDate = (date) => date.toLocaleDateString(undefined, {
 const formattedTime = (date) => date.toLocaleTimeString("pl");
 
 export const Clock = () => {
-    const date = useCurrencyDate();
+    const date = useCurrentDate();
 
 
     return (
