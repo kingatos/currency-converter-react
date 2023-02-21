@@ -1,4 +1,3 @@
-import { currencies } from "../Currencies";
 import { useEffect, useState } from "react";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
@@ -16,8 +15,8 @@ import {
 
 const Form = () => {
   const [amount, setAmount] = useState("");
-  const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
-  const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
+  const [currencyFrom, setCurrencyFrom] = useState({});
+  const [currencyTo, setCurrencyTo] = useState({});
   const [result, setResult] = useState("");
   const [exchangeRates, setExchangeRates] = useState({});
 
