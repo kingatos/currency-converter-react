@@ -1,5 +1,5 @@
-import { currencies } from "../currencies";
-import { useState } from "react";
+import { currencies } from "../Currencies";
+import { useEffect, useState } from "react";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
 import { Clock } from "../Clock";
@@ -19,18 +19,29 @@ const Form = () => {
   const [currencyFrom, setCurrencyFrom] = useState(currencies[0].name);
   const [currencyTo, setCurrencyTo] = useState(currencies[1].name);
   const [result, setResult] = useState("");
+  const [exchangeRates, setExchangeRates] = useState({});
 
-  const findCurrency = (currencyName) =>
-    currencies.find(({ name }) => name === currencyName);
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      const response = await fetch("https://api.exchangerate.host/latest");
+      const data = await response.json();
+      setExchangeRates(data.rates);
+    };
+    fetchExchangeRates();
+  }, []);
+
   const calculateResult = () => {
-    setResult({
-      currencyFrom,
-      currencyTo,
-      targetAmount:
-        (findCurrency(currencyFrom).rate * amount) /
-        findCurrency(currencyTo).rate,
-      sourceAmount: +amount,
-    });
+    if (exchangeRates) {
+      const sourceRate = exchangeRates[currencyFrom].rate;
+      const targetRate = exchangeRates[currencyTo].rate;
+
+      setResult({
+        currencyFrom,
+        currencyTo,
+        targetAmount: (targetRate / sourceRate) * amount,
+        sourceAmount: +amount,
+      });
+    }
   };
 
   const onResetClick = () => {
@@ -42,6 +53,8 @@ const Form = () => {
     event.preventDefault();
     calculateResult();
   };
+
+  const currencyOptions = Object.keys(exchangeRates);
 
   return (
     <StyledForm onSubmit={onFormSubmit}>
@@ -68,9 +81,9 @@ const Form = () => {
               value={currencyFrom}
               onChange={({ target }) => setCurrencyFrom(target.value)}
             >
-              {currencies.map((currencyFrom) => (
-                <option key={currencyFrom.id} value={currencyFrom.name}>
-                  {currencyFrom.name}
+              {currencyOptions.map((currency) => (
+                <option key={currency} value={currency}>
+                  {currency}
                 </option>
               ))}
               ;
@@ -85,9 +98,9 @@ const Form = () => {
               value={currencyTo}
               onChange={({ target }) => setCurrencyTo(target.value)}
             >
-              {currencies.map((currencyTo) => (
-                <option key={currencyTo.id} value={currencyTo.name}>
-                  {currencyTo.name}
+              {currencyOptions.map((currency) => (
+                <option key={currency} value={currency}>
+                  {currency}
                 </option>
               ))}
               ;
