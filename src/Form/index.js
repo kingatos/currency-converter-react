@@ -17,8 +17,8 @@ import {
 
 const Form = () => {
   const [amount, setAmount] = useState("");
-  const [currencyFrom, setCurrencyFrom] = useState("");
-  const [currencyTo, setCurrencyTo] = useState("");
+  const [currencyFrom, setCurrencyFrom] = useState("EUR");
+  const [currencyTo, setCurrencyTo] = useState("AUD");
   const [result, setResult] = useState("");
   const [exchangeRates, setExchangeRates] = useState({});
   const [isLoading, setLoading] = useState(false);
