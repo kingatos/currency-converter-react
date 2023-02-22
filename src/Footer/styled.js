@@ -6,6 +6,7 @@ export const StyledFooter = styled.footer`
     left: 0;
     width: 100%;
     color: aliceblue;
+    font-weight: 100;
 
 @media(max-width:375px) {
         font-size: 12px;

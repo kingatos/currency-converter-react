@@ -5,8 +5,8 @@ export const ButtonArea = styled.p`
 `;
 
 export const Button = styled.button`
-    padding: 5px 10px;
-    margin-right: 10px;
+    padding: 8px 20px;
+    margin-right: 15px;
     background-color: hsl(70, 199%, 89%);
     border-radius: 5px;
     border-top: 5px;
