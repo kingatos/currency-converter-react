@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { OriginRates } from "./OriginRates";
+import { useAPIdata } from "./useAPIdata";
 import { Loading } from "./Loading";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
@@ -20,22 +21,7 @@ const Form = () => {
   const [currencyFrom, setCurrencyFrom] = useState("EUR");
   const [currencyTo, setCurrencyTo] = useState("AUD");
   const [result, setResult] = useState("");
-  const [exchangeRates, setExchangeRates] = useState({});
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchExchangeRates = async () => {
-      setLoading(true);
-
-      setTimeout(async () => {
-        const response = await fetch("https://api.exchangerate.host/latest");
-        const data = await response.json();
-        setExchangeRates(data.rates);
-        setLoading(false);
-      }, 3000);
-    };
-    fetchExchangeRates();
-  }, []);
+  const { exchangeRates, isLoading } = useAPIdata();
 
   const calculateResult = () => {
     if (exchangeRates) {
