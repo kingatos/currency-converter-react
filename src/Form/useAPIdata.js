@@ -3,21 +3,34 @@ import { useEffect, useState } from "react";
 export const useAPIdata = () => {
   const [exchangeRates, setExchangeRates] = useState({});
   const [isLoading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchExchangeRates = async () => {
-      setLoading(true);
-
-      setTimeout(async () => {
-        const response = await fetch("https://api.exchangerate.host/latest");
-        const data = await response.json();
-        setExchangeRates(data.rates);
-        setLoading(false);
-      }, 3000);
-    };
-    fetchExchangeRates();
+    setLoading(true);
+    setTimeout(() => {
+      const fetchExchangeRates = async () => {
+        try {
+          const response = await fetch("https://api.exchangerate.host/latest");
+          const data = await response.json();
+          setExchangeRates(data.rates);
+          setLoading(false);
+          setError(false);
+        } catch (error) {
+          setError(true);
+          setLoading(false);
+        }
+      };
+      fetchExchangeRates();
+    }, 3000);
   }, []);
+
+  if (error) {
+    return {
+      exchangeRates: {},
+      isLoading: false,
+      error: "Something went wrong. Please try again later.",
+    };
+  }
 
   return { exchangeRates, isLoading };
 };
-
