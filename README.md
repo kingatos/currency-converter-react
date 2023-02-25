@@ -2,7 +2,7 @@
 
 #  ➡ [DEMO](https://kingatos.github.io/currency-converter-react/)
 
-# ![How it use?](https://i.ibb.co/jhRvsPb/currencyconverter.gif)
+# ![How it use?](https://i.ibb.co/TcSNrVr/Animation.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Here is a simple currency converter. Enter the amount and get the result! Check it out!
@@ -55,4 +55,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 `webpack`
 `babel`
 `styled-components`
+`custom hook`
+
 
