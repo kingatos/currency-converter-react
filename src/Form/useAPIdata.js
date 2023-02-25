@@ -32,5 +32,6 @@ export const useAPIdata = () => {
     };
   }
 
-  return { exchangeRates, isLoading };
+  return { exchangeRates, isLoading, error };
+
 };
