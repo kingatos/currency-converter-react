@@ -8,9 +8,10 @@ export const useAPIdata = () => {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
+      const url = "https://api.exchangerate.host/latest";
       const fetchExchangeRates = async () => {
         try {
-          const response = await fetch("https://api.exchangerate.host/latest");
+          const response = await fetch(url);
           const data = await response.json();
           setExchangeRates(data.rates);
           setLoading(false);
@@ -33,5 +34,4 @@ export const useAPIdata = () => {
   }
 
   return { exchangeRates, isLoading, error };
-
 };
