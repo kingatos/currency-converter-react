@@ -12,7 +12,7 @@ export const useAPIdata = () => {
       const fetchExchangeRates = async () => {
         try {
           const response = await fetch(url);
-          const {data, rates} = await response.json();
+          const { data, rates} = await response.json();
           setExchangeRates({ status: "success", data, rates});
           setLoading(false);
           setError(false);
@@ -30,7 +30,7 @@ export const useAPIdata = () => {
     return {
       exchangeRates: {},
       isLoading: false,
-      error: "Something went wrong. Please try again later.",
+      error: true, 
     };
   }
 
