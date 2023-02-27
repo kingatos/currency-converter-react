@@ -21,7 +21,7 @@ const Form = () => {
   const [currencyFrom, setCurrencyFrom] = useState("EUR");
   const [currencyTo, setCurrencyTo] = useState("AUD");
   const [result, setResult] = useState("");
-  const { exchangeRates, isLoading } = useAPIdata();
+  const { exchangeRates, isLoading, error } = useAPIdata();
 
   const calculateResult = () => {
     if (exchangeRates) {
@@ -57,6 +57,8 @@ const Form = () => {
           <Clock />
           {isLoading ? (
             <Loading />
+          ) : error ? (
+            <p>Something went wrong. Please try again later.</p>
           ) : (
             <>
               <LabelText>Enter the amount:</LabelText>
