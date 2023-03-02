@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
 export const useAPIdata = () => {
-  const [exchangeRates, setExchangeRates] = useState({ status: "loading"});
+  const [exchangeRates, setExchangeRates] = useState({ status: "loading" });
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  
 
   useEffect(() => {
     setLoading(true);
@@ -12,8 +13,8 @@ export const useAPIdata = () => {
       const fetchExchangeRates = async () => {
         try {
           const response = await fetch(url);
-          const { data, rates} = await response.json();
-          setExchangeRates({ status: "success", data, rates});
+          const { data, rates } = await response.json();
+          setExchangeRates({ status: "success", data, rates });
           setLoading(false);
           setError(false);
         } catch (error) {
@@ -30,10 +31,9 @@ export const useAPIdata = () => {
     return {
       exchangeRates: {},
       isLoading: false,
-      error: true, 
+      error: true,
     };
   }
-
 
   return { exchangeRates, isLoading, error };
 };
