@@ -25,8 +25,8 @@ const Form = () => {
 
   const calculateResult = () => {
     if (exchangeRates) {
-      const sourceRate = exchangeRates[currencyFrom];
-      const targetRate = exchangeRates[currencyTo];
+      const sourceRate = exchangeRates.rates[currencyFrom];
+      const targetRate = exchangeRates.rates[currencyTo];
 
       setResult({
         currencyFrom,
@@ -47,7 +47,8 @@ const Form = () => {
     calculateResult();
   };
 
-  const currencyOptions = Object.keys(exchangeRates);
+  const { rates } = exchangeRates;
+  const currencyOptions = Object.keys(rates);
 
   return (
     <StyledForm onSubmit={onFormSubmit}>
