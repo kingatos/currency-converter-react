@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { OriginRates } from "./OriginRates";
 import { useAPIdata } from "./useAPIdata";
-import { Loading } from "./Loading";
 import { Result } from "./Result";
 import { Buttons } from "./Buttons";
+import { Loading } from "./Loading";
+import { Failure } from "./Failure";
 import { Clock } from "../Clock";
 import { Footer } from "../Footer";
 import {
@@ -21,7 +22,7 @@ const Form = () => {
   const [currencyFrom, setCurrencyFrom] = useState("EUR");
   const [currencyTo, setCurrencyTo] = useState("AUD");
   const [result, setResult] = useState("");
-  const { exchangeRates, isLoading, error } = useAPIdata();
+  const exchangeRates = useAPIdata();
 
   const calculateResult = () => {
     if (exchangeRates) {
@@ -45,10 +46,7 @@ const Form = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult();
-  };
-
-  const { rates } = exchangeRates;
-  const currencyOptions = Object.keys(rates);
+  }; 
 
   return (
     <StyledForm onSubmit={onFormSubmit}>
@@ -56,10 +54,10 @@ const Form = () => {
         <Legend>Currency Calculator</Legend>
         <Label>
           <Clock />
-          {isLoading ? (
+          {exchangeRates.status === "loading" ? ( 
             <Loading />
-          ) : error ? (
-            <p>Something went wrong. Please try again later.</p>
+          ) : exchangeRates.status === "error" ? (
+            <Failure />
           ) : (
             <>
               <LabelText>Enter the amount:</LabelText>
@@ -80,8 +78,11 @@ const Form = () => {
                     value={currencyFrom}
                     onChange={({ target }) => setCurrencyFrom(target.value)}
                   >
-                    {currencyOptions.map((currency) => (
-                      <option key={currency} value={currency}>
+                    {!!exchangeRates.rates && Object.keys(exchangeRates.rates).map((currency) => (
+                      <option 
+                        key={currency} 
+                        value={currency}
+                      >
                         {currency}
                       </option>
                     ))}
@@ -97,8 +98,11 @@ const Form = () => {
                     value={currencyTo}
                     onChange={({ target }) => setCurrencyTo(target.value)}
                   >
-                    {currencyOptions.map((currency) => (
-                      <option key={currency} value={currency}>
+                    {!!exchangeRates.rates && Object.keys(exchangeRates.rates).map((currency) => (
+                      <option 
+                        key={currency} 
+                        value={currency}
+                      >
                         {currency}
                       </option>
                     ))}
