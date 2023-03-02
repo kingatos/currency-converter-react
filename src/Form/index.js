@@ -78,7 +78,7 @@ const Form = () => {
                     value={currencyFrom}
                     onChange={({ target }) => setCurrencyFrom(target.value)}
                   >
-                    {!!exchangeRates.rates && Object.keys(exchangeRates.rates).map((currency) => (
+                    {Object.keys(exchangeRates.rates).map((currency) => (
                       <option 
                         key={currency} 
                         value={currency}
@@ -98,7 +98,7 @@ const Form = () => {
                     value={currencyTo}
                     onChange={({ target }) => setCurrencyTo(target.value)}
                   >
-                    {!!exchangeRates.rates && Object.keys(exchangeRates.rates).map((currency) => (
+                    {Object.keys(exchangeRates.rates).map((currency) => (
                       <option 
                         key={currency} 
                         value={currency}
