@@ -4,8 +4,7 @@ export const Loading = () => {
   return (
     <SpinnerContainer>
       <Spinner />
-      Loading... Please wait
-
+      Loading... Please wait 
     </SpinnerContainer>
   );
 };
