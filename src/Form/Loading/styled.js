@@ -25,4 +25,8 @@ export const SpinnerContainer = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 5rem;
+
+  @media (max-width: 425px) {
+    margin-top: 2rem;
+  }
 `;
