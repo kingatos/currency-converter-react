@@ -25,5 +25,5 @@ html {
   background-position: center;
   background-size: cover;
 }
-`
+`;
 export default GlobalStyles;
