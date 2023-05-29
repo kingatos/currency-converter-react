@@ -1,12 +1,10 @@
-import { Spinner, SpinnerContainer}  from "./styled.js";
+import { Spinner, SpinnerContainer } from "./styled.js";
 
 export const Loading = () => {
   return (
     <SpinnerContainer>
       <Spinner />
-      Loading... Please wait 
+      Loading... Please wait
     </SpinnerContainer>
   );
 };
-
-
