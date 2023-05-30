@@ -1,10 +1,10 @@
-import Form from "./Form"
+import Form from "./Form";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    margin: auto;
-    max-width: 700px;
-    padding: 100px 0;
+  margin: auto;
+  max-width: 700px;
+  padding: 100px 0;
 `;
 
 function App() {
@@ -15,4 +15,3 @@ function App() {
   );
 }
 export default App;
-
