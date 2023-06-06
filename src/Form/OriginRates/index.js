@@ -15,7 +15,8 @@ export const OriginRates = () => {
 
   return (
     <StyledDescription>
-      Currency rates are taken from the European Central Bank. <br/>Current as of: <StyledDate>{formattedDate}</StyledDate>
+      Currency rates are taken from the European Central Bank. <br />
+      Current as of: <StyledDate>{formattedDate}</StyledDate>
     </StyledDescription>
   );
 };
