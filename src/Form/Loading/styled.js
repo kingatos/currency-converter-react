@@ -30,3 +30,7 @@ export const SpinnerContainer = styled.div`
     margin-top: 2rem;
   }
 `;
+
+export const LoadingText = styled.p`
+  padding: 0px;
+`;
