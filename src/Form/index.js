@@ -46,7 +46,7 @@ const Form = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult();
-  }; 
+  };
 
   return (
     <StyledForm onSubmit={onFormSubmit}>
@@ -54,7 +54,7 @@ const Form = () => {
         <Legend>Currency Calculator</Legend>
         <Label>
           <Clock />
-          {exchangeRates.status === "loading" ? ( 
+          {exchangeRates.status === "loading" ? (
             <Loading />
           ) : exchangeRates.status === "error" ? (
             <Failure />
@@ -79,10 +79,7 @@ const Form = () => {
                     onChange={({ target }) => setCurrencyFrom(target.value)}
                   >
                     {Object.keys(exchangeRates.rates).map((currency) => (
-                      <option 
-                        key={currency} 
-                        value={currency}
-                      >
+                      <option key={currency} value={currency}>
                         {currency}
                       </option>
                     ))}
@@ -99,10 +96,7 @@ const Form = () => {
                     onChange={({ target }) => setCurrencyTo(target.value)}
                   >
                     {Object.keys(exchangeRates.rates).map((currency) => (
-                      <option 
-                        key={currency} 
-                        value={currency}
-                      >
+                      <option key={currency} value={currency}>
                         {currency}
                       </option>
                     ))}
