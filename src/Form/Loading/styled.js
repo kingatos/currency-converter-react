@@ -12,8 +12,8 @@ export const Spinner = styled.div`
   border: 3px solid #fff;
   border-top-color: #0f9d58;
   font-weight: 100;
-  width: 6rem;
-  height: 6rem;
+  width: 64px;
+  height: 64px;
   animation: ${spin} 1s ease-in-out infinite;
   margin-right: 0.5rem;
   color: ${({ theme }) => theme.color.capeCod};
