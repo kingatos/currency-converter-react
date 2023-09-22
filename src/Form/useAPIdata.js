@@ -6,9 +6,10 @@ export const useAPIdata = () => {
   });
 
   useEffect(() => {
+    const url = "https://api.exchangerate.host/latest";
     const fetchExchangeRates = async () => {
       try {
-        const response = await fetch("/currency-converter-react/data.json");
+        const response = await fetch(url);
 
         if (!response.ok) {
           throw new Error(response.statusText);
