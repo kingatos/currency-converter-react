@@ -57,6 +57,7 @@ export const Currency = styled.select`
   background-color: ${({ theme }) => theme.color.bisque};
   border: 1px solid ${({ theme }) => theme.color.gray};
   font-weight: bold;
+  cursor: pointer;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.selectMode}px) {
     width: 200px;
