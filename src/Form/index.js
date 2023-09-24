@@ -20,7 +20,7 @@ import {
 const Form = () => {
   const [amount, setAmount] = useState("");
   const [currencyFrom, setCurrencyFrom] = useState("EUR");
-  const [currencyTo, setCurrencyTo] = useState("AUD");
+  const [currencyTo, setCurrencyTo] = useState("PLN");
   const [result, setResult] = useState("");
   const exchangeRates = useAPIdata();
 
