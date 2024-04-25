@@ -9,7 +9,7 @@ export const useAPIdata = () => {
     const fetchExchangeRates = async () => {
       try {
         const response = await fetch(
-          "http://api.exchangeratesapi.io/v1/latest?access_key=aab5e1520ee550cc33070b4c008ee32e"
+          "/currency-converter-react/data.json"
         );
 
         if (!response.ok) {
